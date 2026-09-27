@@ -1,0 +1,50 @@
+@startuml erd
+
+
+entity client {
+  +id : INTEGER <<PK>>
+  --
+  name : VARCHAR
+  address : VARCHAR
+}
+
+entity order {
+  +id : INTEGER <<PK>>
+  --
+  order_date : DATE
+  client_id : INTEGER <<FK>>
+}
+
+entity product {
+  +id : INTEGER <<PK>>
+  --
+  name : VARCHAR
+}
+
+entity order_details {
+  +order_id : INTEGER <<PK, FK>>
+  +product_id : INTEGER <<PK, FK>>
+  --
+  quantity : INTEGER
+}
+
+client::id ||-down-o{ order::client_id : клієнт в замовленні
+note on link
+  Один клієнт (||) може мати нуль або багато (o{) замовлень
+  (клієнт може бути зареєстрований, але ще нічого не купив)
+end note
+
+order::id ||-left-|{ order_details::order_id : деталі замовлення
+note on link
+  Одне замовлення (||) обов'язково містить одну або багато (|{) деталей
+  (порожнє замовлення не має сенсу)
+end note
+
+product::id ||-up-o{ order_details::product_id : товар в замовленні
+note on link
+  Один товар (||) може бути включений в нуль або багато (o{) деталей
+  (товар може бути в каталозі, але його ще ніхто не купував)
+end note
+
+@enduml
+
