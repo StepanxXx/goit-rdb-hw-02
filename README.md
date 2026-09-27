@@ -1,7 +1,10 @@
-# goit-rdb-hw-02
+# Реляційні бази даних: Нормалізація та створення ER-діаграм (goit-rdb-hw-02)
+
+Цей репозиторій містить виконання домашнього завдання з проєктування реляційних баз даних. Домашнє завдання включає покрокову нормалізацію таблиць, створення детального опису бази даних та проєктування ER-діаграм.
 
 ## 1) Нормалізація таблиць
 
+Початкове завдання на нормалізацію:
 ![normalization-task.png](normalization-task.png)
 
 ### 1-ша нормальна форма
@@ -115,3 +118,23 @@
 ## 4) Діаграма ER (Workbench)
 
 ![erd-workbench.png](erd-workbench.png)
+
+## 5) Створені таблиці у Workbench (Скриншоти розгорнутої схеми)
+
+Нижче наведено скриншоти розгорнутих схем, що підтверджують створення таблиць та колонок із урахуванням зв'язків у MySQL Workbench:
+
+### Таблиця `client`
+
+![Client Table](schema-screenshots/client.png)
+
+### Таблиця `order`
+
+![Order Table](schema-screenshots/order.png)
+
+### Таблиця `product`
+
+![Product Table](schema-screenshots/product.png)
+
+### Таблиця `order_details`
+
+![Order Details Table](schema-screenshots/order_details.png)
